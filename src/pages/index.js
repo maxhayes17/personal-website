@@ -2,7 +2,6 @@ import * as React from "react"
 import { motion, stagger, useAnimate } from "framer-motion"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Project from "../components/Project";
-import TCHome from "../images/tc-home.png";
 import { projects } from "../data/projects";
 
 
@@ -34,11 +33,21 @@ const IndexPage = () => {
           visible: {y:0}
         }}
       >
-        <AnchorLink href="#about" className="py-3 px-5 my-auto font-bold hover:text-majorelle-blue">About me</AnchorLink>
-        <AnchorLink href="#projects" className="py-3 px-5 my-auto font-bold hover:text-majorelle-blue">Projects</AnchorLink>
-        <AnchorLink href="#resume" className="py-3 px-5 my-auto font-bold hover:text-majorelle-blue">Resume</AnchorLink>
+        <div className="flex flex-row space-x-6">
+          <motion.a 
+            whileHover={{scale:1}} 
+            className="my-auto hover:text-majorelle-blue" 
+            href="https://www.github.com/maxhayes17" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" style={{margin:"auto"}}>
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+          </motion.a>
+          <AnchorLink href="#projects" className="my-auto font-bold hover:text-majorelle-blue">Projects</AnchorLink>
+          <AnchorLink href="#resume" className="my-auto font-bold hover:text-majorelle-blue">Resume</AnchorLink>
+        </div>
         <motion.a
           whileHover={{scale:1.1}}
+          href="mailto: maxhayess17@gmail.com"
           className="py-2 px-3 mx-8 my-auto font-bold bg-majorelle-blue rounded-lg text-lavender-blush hover:cursor-pointer bg-gradient-to-r hover:from-majorelle-blue hover:to-cyan-600"
           >Contact me
         </motion.a>
@@ -109,7 +118,7 @@ const IndexPage = () => {
             <motion.div 
               initial="hidden"
               whileInView="visible"
-              whileHover={{scale:1.2}}
+              whileHover={{scale:1.1}}
               variants={{
                 hidden: {opacity: 0},
                 visible: {opacity: 1,
@@ -125,7 +134,7 @@ const IndexPage = () => {
               </AnchorLink>
             </motion.div>
       </div>
-      <section id="about">
+      {/* <section id="about">
         <motion.div 
         initial="hidden"
         whileInView="visible"
@@ -145,7 +154,8 @@ const IndexPage = () => {
             <p>Lorem ipsum</p>
           </div>
         </motion.div>
-      </section>
+      </section> */}
+
       <section id="projects">
       <div className="">
         {projects && projects.map((project) => 
@@ -159,7 +169,7 @@ const IndexPage = () => {
       </section>
       
       <section id="resume" className="h-96">
-        <h1 className="text-center text-xl font-bold">View my resume <a href="#"className="text-majorelle-blue">here</a></h1>
+        <h1 className="text-center text-xl font-bold">View my resume <a href="Maximus_Hayes_Resume.pdf" target="_blank" className="text-majorelle-blue">here</a></h1>
       </section>
 
 
