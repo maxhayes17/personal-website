@@ -22,9 +22,9 @@ const Project = ({name, desc, tags, link, picture_path}) => {
 
                 <div className="flex flex-col h-2/3 w-1/3 my-auto justify-top content-end">
                 <h1 className="text-4xl font-bold">{name}</h1>
-                    <div className="flex flex-row mt-3">
+                    <div className="flex flex-row flex-wrap mt-3">
                         {tags && tags.map((tag) => 
-                            <p className="bg-slate-gray text-s w-fit h-fit px-2 py-1 rounded my-auto mx-1" key={tag}>{tag}</p>
+                            <p className="bg-slate-gray text-s w-fit h-fit px-2 py-1 rounded my-1 mx-1" key={tag}>{tag}</p>
                         )}
                     </div>
                     <div className="flex flex-col h-full mt-5">
